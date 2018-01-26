@@ -1,0 +1,27 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:table="sap.ui.comp.smarttable"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:core="sap.ui.core">
+	<Dialog id="displayDataDialog" resizable="true" width="90%" stretch="true" draggable="true">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Label text="View Data"/>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://sys-cancel" press="closeDataDialog"/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<smartFilterBar:SmartFilterBar id="smartFilterBar" />
+			<table:SmartTable 
+				id="displayDataDialogTable" 
+				header="Display Data" 
+				smartFilterId="smartFilterBar"
+				initiallyVisibleFields="ID"
+				useExportToExcel="true" 
+				demandPopin="true"
+				tableType="ResponsiveTable"
+				enableAutoBinding="true">
+			</table:SmartTable>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

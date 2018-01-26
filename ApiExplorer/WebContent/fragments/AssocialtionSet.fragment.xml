@@ -1,0 +1,35 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Panel headerText="Association Sets" expandable="true" expanded="false">
+		<List items="{path:'idConfigModel>/metadata/associationSet'}" growing="true">
+			<headerToolbar>
+				<Toolbar>
+					<SearchField liveChange='onPanelSearch'></SearchField>
+				</Toolbar>
+			</headerToolbar>
+			<CustomListItem>
+				<Panel headerText="{idConfigModel>name}"  expandable="true" expanded="false">
+					<headerToolbar>
+						<Toolbar>
+							<Label text="{idConfigModel>name}" design="bold"/>
+							<ToolbarSpacer/>
+							<Label text="{idConfigModel>association}" design="bold"/>
+							<ToolbarSpacer/>
+							<Button text="View Data"/>
+						</Toolbar>
+					</headerToolbar>
+					<content>
+						<VBox items="{path:	'idConfigModel>end'}">
+							<HBox>
+								<items>
+									<Text text="{idConfigModel>role} , {idConfigModel>entitySet}"/>
+									<Link text="View Data" class="sapUiMediumllMarginBegin'"/>
+								</items>
+							</HBox>
+						</VBox>
+					</content>
+				</Panel>
+			</CustomListItem>
+		</List>
+	</Panel>
+</core:FragmentDefinition>

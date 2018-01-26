@@ -1,0 +1,23 @@
+<mvc:View controllerName="sap.pinaki.controller.Home"
+    xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<subHeader>
+					<Toolbar>
+						<Input id="idServiceUrl" 
+						    value="{idConfigModel>/mainlUrl}"
+						    placeholder="{i18n>urlInputPlaceholder}"></Input>
+						<Button text="Fetch Details" type="Accept" icon="sap-icon://process" press="onLoadUrlPress"></Button>
+						<Button text="Save Url" icon="sap-icon://save"></Button>
+					</Toolbar>
+				</subHeader>
+				<content>
+					<core:Fragment fragmentName="sap.pinaki.fragments.ServiceSchema" type="XML"/>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

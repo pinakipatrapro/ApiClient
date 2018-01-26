@@ -1,0 +1,65 @@
+<core:FragmentDefinition xmlns="sap.m"
+	 xmlns:core="sap.ui.core">
+	<Dialog id="idExploreFI" resizable="true" width="90%" stretch="true" draggable="true">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Label text="Explore Function Import : {name}"/>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://sys-cancel" press="closeDataDialog"/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<Table  id='idFIParametersTable'
+				inset="false"
+				items="{
+					path: 'parameter',
+					sorter: {
+						path: 'name'
+					}
+				}">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="Parameters (Type: {httpMethod})" level="H2"/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column hAlign="Center">
+						<Text text="Parameter" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Value" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Type" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{name}" />
+							<Input />
+							<Text text="{type}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			<Panel expanded="false" expandable="true" visible="false" id="idFIErrorPanel" class="requestErrorPanel">
+				<headerToolbar>
+					<Toolbar>
+						<Label text="{oError/message}" design="Bold"/>
+						<core:Icon src="sap-icon://error" />
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<Label text="Status Code : {oError/response/statusCode} , "/>
+					<Label text="Status Text : {oError/response/statusText}"/>
+					<Text text="{oError/response/body}" />
+				</content>
+			</Panel>
+		</content>
+		<buttons>
+			<Button text="Send request" press="callFunctionImport" />
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

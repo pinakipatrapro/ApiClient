@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Panel headerText="Function Imports" expandable="true" expanded="false">
+		<List items="{path:'idConfigModel>/metadata/functionImport'}" growing="true">
+			<headerToolbar>
+				<Toolbar>
+					<SearchField liveChange='onPanelSearch'></SearchField>
+				</Toolbar>
+			</headerToolbar>
+			<CustomListItem>
+				<Panel headerText="{idConfigModel>name}"  expandable="true" expanded="false">
+					<headerToolbar>
+						<Toolbar>
+							<Label text="{idConfigModel>name}" design="bold"/>
+							<ToolbarSpacer/>
+							<Label text="{idConfigModel>entityType}" design="bold"/>
+							<ToolbarSpacer/>
+							<Button text="Execute" icon="sap-icon://feeder-arrow" press="openFunctionExportExplorePanel"/>
+						</Toolbar>
+					</headerToolbar>
+					<content>
+						<Text text="Method : {idConfigModel>httpMethod}"/>
+						<List items="{path:'idConfigModel>parameter'}" headerText="Parameters">
+							<StandardListItem title="Name : {idConfigModel>name} , Type : {idConfigModel>type} , Mode : {idConfigModel>mode}"/>
+						</List>
+					</content>
+				</Panel>
+			</CustomListItem>
+		</List>
+	</Panel>
+</core:FragmentDefinition>
