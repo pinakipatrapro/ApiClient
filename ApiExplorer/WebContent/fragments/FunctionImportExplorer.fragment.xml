@@ -65,9 +65,7 @@
 					</Toolbar>
 				</headerToolbar>
 				<content>
-					<Label text="Status Code : {oError/response/statusCode} , "/>
-					<Label text="Status Text : {oError/response/statusText}"/>
-					<Text text="{oError/response/body}" />
+					
 				</content>
 			</Panel>
 		</content>
