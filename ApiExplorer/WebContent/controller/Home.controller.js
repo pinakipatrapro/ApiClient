@@ -79,10 +79,10 @@ sap.ui.define([
 			}
 			this.callFuncImp(oModel,method,path,urlParameters).then(function(oData,response){
 				var successPanel = sap.ui.getCore().byId('idFISuccessPanel');
-				successPanel.setVisible(true);
 				var data = successPanel.getBindingContext().getObject();
 				data["oSuccess"] = oData; 
 				oConfigModel.setProperty(successPanel.getBindingContext().sPath,data);
+				successPanel.setVisible(true);
 			}).catch(function(oError){
 				var errorPanel = sap.ui.getCore().byId('idFIErrorPanel');
 				errorPanel.setVisible(true);

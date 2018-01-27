@@ -48,7 +48,7 @@
 				<headerToolbar>
 					<Toolbar>
 						<Label text="{oError/message}" design="Bold"/>
-						<core:Icon src="sap-icon://error" />
+						<core:Icon src="sap-icon://error" color="red"/>
 					</Toolbar>
 				</headerToolbar>
 				<content>
@@ -60,8 +60,8 @@
 			<Panel expanded="false" expandable="true" visible="false" id="idFISuccessPanel" class="requestSuccessPanel">
 				<headerToolbar>
 					<Toolbar>
-						<Label text="{oError/message}" design="Bold"/>
-						<core:Icon src="sap-icon://error" />
+						<Label text="Data Successfully Fetched" design="Bold"/>
+						<core:Icon src="sap-icon://success" color="green" />
 					</Toolbar>
 				</headerToolbar>
 				<content>
