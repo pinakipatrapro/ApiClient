@@ -102,6 +102,9 @@ sap.ui.define([
 		},
 		ViewDataOperationsDeleteEntry : function(oEvent){
 			ViewDataOperations.deleteEntry(oEvent);
+		},
+		ViewDataOperationsEditEntry : function(oEvent){
+			ViewDataOperations.editEntry(oEvent,oConfigModel);
 		}
 	});
 });
