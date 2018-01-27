@@ -1,2 +1,2 @@
 # ApiClient
-Api Exploration Tool
+Generic Api Exploration Tool
