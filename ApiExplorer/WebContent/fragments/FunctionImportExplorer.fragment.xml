@@ -1,4 +1,5 @@
 <core:FragmentDefinition xmlns="sap.m"
+	xmlns:html="http://www.w3.org/1999/xhtml"
 	 xmlns:core="sap.ui.core">
 	<Dialog id="idExploreFI" resizable="true" width="90%" stretch="true" draggable="true">
 		<customHeader>
@@ -48,13 +49,24 @@
 				<headerToolbar>
 					<Toolbar>
 						<Label text="{oError/message}" design="Bold"/>
-						<core:Icon src="sap-icon://error" />
+						<core:Icon src="sap-icon://error" color="red"/>
 					</Toolbar>
 				</headerToolbar>
 				<content>
 					<Label text="Status Code : {oError/response/statusCode} , "/>
 					<Label text="Status Text : {oError/response/statusText}"/>
 					<Text text="{oError/response/body}" />
+				</content>
+			</Panel>
+			<Panel expanded="false" expandable="true" visible="false" id="idFISuccessPanel" class="requestSuccessPanel">
+				<headerToolbar>
+					<Toolbar>
+						<Label text="Data Successfully Fetched" design="Bold"/>
+						<core:Icon src="sap-icon://approve" color="green" />
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<Text text="{resultSet}" />
 				</content>
 			</Panel>
 		</content>

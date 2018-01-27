@@ -5,7 +5,7 @@ sap.ui.define([
 ], function(Controller,JSONModel,BaseController) {
 	"use strict";
 	var oData = {
-		'mainlUrl' : 'https://ldcisd4.wdf.sap.corp:44302/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/'	
+		'mainlUrl' : 'http://services.odata.org/V2/OData/OData.svc/'	
 	};
 	var oConfigModel = new JSONModel(oData);
 	
@@ -43,7 +43,9 @@ sap.ui.define([
             smartTable.setEntitySet(bindingContext);
             smartTable.addEventDelegate({
             	"onAfterRendering": function () {
-            		setTimeout(function(){sap.ui.getCore().byId('__error0').destroy()},0)
+					try{
+						setTimeout(function(){sap.ui.getCore().byId('__error0').destroy()},0)
+					}catch(e){}
             	}
             }, this);
             sap.ui.getCore().byId('displayDataDialog').open();
@@ -78,9 +80,18 @@ sap.ui.define([
 				urlParameters[tableItems[i].mAggregations.cells[0].getProperty('text')]=tableItems[i].mAggregations.cells[1].getProperty('value');
 			}
 			this.callFuncImp(oModel,method,path,urlParameters).then(function(oData,response){
-				
-			}).catch(function(oError){
+				var successPanel = sap.ui.getCore().byId('idFISuccessPanel');
 				var errorPanel = sap.ui.getCore().byId('idFIErrorPanel');
+				var data = errorPanel.getBindingContext().getObject();
+				successPanel.setVisible(true);
+				errorPanel.setVisible(false);
+
+				data["resultSet"] = JSON.stringify(oData); 
+				oConfigModel.setProperty(successPanel.getBindingContext().sPath,data);
+			}).catch(function(oError){
+				var successPanel = sap.ui.getCore().byId('idFISuccessPanel');
+				var errorPanel = sap.ui.getCore().byId('idFIErrorPanel')
+				successPanel.setVisible(false);
 				errorPanel.setVisible(true);
 				var data = errorPanel.getBindingContext().getObject();
 				data["oError"] = oError; 
