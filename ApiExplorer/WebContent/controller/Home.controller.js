@@ -5,7 +5,7 @@ sap.ui.define([
 ], function(Controller,JSONModel,BaseController) {
 	"use strict";
 	var oData = {
-		'mainlUrl' : 'https://ldcisd4.wdf.sap.corp:44302/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/'	
+		'mainlUrl' : 'http://services.odata.org/V2/OData/OData.svc/'	
 	};
 	var oConfigModel = new JSONModel(oData);
 	
@@ -81,7 +81,7 @@ sap.ui.define([
 				var successPanel = sap.ui.getCore().byId('idFISuccessPanel');
 				successPanel.setVisible(true);
 				var data = successPanel.getBindingContext().getObject();
-				data["oSuccess"] = oError; 
+				data["oSuccess"] = oData; 
 				oConfigModel.setProperty(successPanel.getBindingContext().sPath,data);
 			}).catch(function(oError){
 				var errorPanel = sap.ui.getCore().byId('idFIErrorPanel');

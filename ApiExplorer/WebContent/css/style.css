@@ -1,3 +1,6 @@
 .requestErrorPanel{
 	background: linear-gradient(#fcd4d4,white,#faeaea);
 }
+.requestSuccessPanel{
+	background: linear-gradient(#ddffdf,white,#eafffb);
+}

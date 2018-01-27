@@ -57,7 +57,7 @@
 					<Text text="{oError/response/body}" />
 				</content>
 			</Panel>
-			<Panel expanded="false" expandable="true" visible="false" id="idFISuccessPanel" class="requestErrorPanel">
+			<Panel expanded="false" expandable="true" visible="false" id="idFISuccessPanel" class="requestSuccessPanel">
 				<headerToolbar>
 					<Toolbar>
 						<Label text="{oError/message}" design="Bold"/>
