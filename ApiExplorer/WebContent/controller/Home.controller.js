@@ -43,7 +43,9 @@ sap.ui.define([
             smartTable.setEntitySet(bindingContext);
             smartTable.addEventDelegate({
             	"onAfterRendering": function () {
-            		setTimeout(function(){sap.ui.getCore().byId('__error0').destroy()},0)
+					try{
+						setTimeout(function(){sap.ui.getCore().byId('__error0').destroy()},0)
+					}catch(e){}
             	}
             }, this);
             sap.ui.getCore().byId('displayDataDialog').open();
@@ -79,10 +81,13 @@ sap.ui.define([
 			}
 			this.callFuncImp(oModel,method,path,urlParameters).then(function(oData,response){
 				var successPanel = sap.ui.getCore().byId('idFISuccessPanel');
-				var errorPanel = sap.ui.getCore().byId('idFIErrorPanel')
-				
+				var errorPanel = sap.ui.getCore().byId('idFIErrorPanel');
+				var data = errorPanel.getBindingContext().getObject();
 				successPanel.setVisible(true);
 				errorPanel.setVisible(false);
+
+				data["resultSet"] = JSON.stringify(oData); 
+				oConfigModel.setProperty(successPanel.getBindingContext().sPath,data);
 			}).catch(function(oError){
 				var successPanel = sap.ui.getCore().byId('idFISuccessPanel');
 				var errorPanel = sap.ui.getCore().byId('idFIErrorPanel')
