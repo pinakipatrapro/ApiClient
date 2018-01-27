@@ -5,7 +5,7 @@ sap.ui.define([
 
 	return Controller.extend("sap.pinaki.controller.ViewDataOperations", {
 		
-		viewDataDeleteEntry : function(oEvent){
+		deleteEntry : function(oEvent){
 			
 		} 
 	

@@ -36,7 +36,7 @@
 							<cells>
 								<HBox>
 									<Button type="Transparent" text="Edit" icon="sap-icon://edit"/>
-									<Button type="Transparent" text="Delete" icon="sap-icon://delete" press="viewDataDeleteEntry"/>
+									<Button type="Transparent" text="Delete" icon="sap-icon://delete" press="ViewDataOperationsDeleteEntry"/>
 								</HBox>
 							</cells>
 						</ColumnListItem>

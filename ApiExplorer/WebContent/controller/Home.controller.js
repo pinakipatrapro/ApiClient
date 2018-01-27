@@ -99,6 +99,9 @@ sap.ui.define([
 				oConfigModel.setProperty(errorPanel.getBindingContext().sPath,data);
 			});
 			
+		},
+		ViewDataOperationsDeleteEntry : function(oEvent){
+			ViewDataOperations.deleteEntry(oEvent);
 		}
 	});
 });
