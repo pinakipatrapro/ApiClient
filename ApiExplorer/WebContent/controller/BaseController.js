@@ -3,7 +3,7 @@ sap.ui.define([
 ], function (Controller) {
 	"use strict";
 
-	return Controller.extend("sap.pinaki.controller.Home", {
+	return Controller.extend("sap.pinaki.controller.BaseController", {
 		
 		callFuncImp : function(oModel,method,path,urlParameters){
 			return new Promise(function(resolve,reject){
