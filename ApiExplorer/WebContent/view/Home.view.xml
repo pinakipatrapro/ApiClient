@@ -9,7 +9,7 @@
 					<Toolbar>
 						<Input id="idServiceUrl" 
 						    value="{idConfigModel>/mainlUrl}"
-						    placeholder="{i18n>urlInputPlaceholder}"></Input>
+						    placeholder="{i18n>urlInputPlaceholder}" submit="onLoadUrlPress"></Input>
 						<Button text="Fetch Details" type="Accept" icon="sap-icon://process" press="onLoadUrlPress"></Button>
 						<Button text="Save Url" icon="sap-icon://save"></Button>
 					</Toolbar>

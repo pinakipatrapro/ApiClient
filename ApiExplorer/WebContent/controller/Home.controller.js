@@ -1,11 +1,12 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/model/json/JSONModel",
-	"sap/pinaki/controller/BaseController"
-], function(Controller,JSONModel,BaseController) {
+	"sap/pinaki/controller/BaseController",
+	"sap/pinaki/controller/ViewDataOperations"
+], function(Controller,JSONModel,BaseController,ViewDataOperations) {
 	"use strict";
 	var oData = {
-		'mainlUrl' : 'http://services.odata.org/V2/OData/OData.svc/'	
+		'mainlUrl' : 'https://sapes5.sapdevcenter.com/sap/opu/odata/iwbep/GWSAMPLE_BASIC/'	
 	};
 	var oConfigModel = new JSONModel(oData);
 	
@@ -98,6 +99,12 @@ sap.ui.define([
 				oConfigModel.setProperty(errorPanel.getBindingContext().sPath,data);
 			});
 			
+		},
+		ViewDataOperationsDeleteEntry : function(oEvent){
+			ViewDataOperations.deleteEntry(oEvent);
+		},
+		ViewDataOperationsEditEntry : function(oEvent){
+			ViewDataOperations.editEntry(oEvent,oConfigModel);
 		}
 	});
 });

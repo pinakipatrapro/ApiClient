@@ -21,6 +21,27 @@
 				demandPopin="true"
 				tableType="ResponsiveTable"
 				enableAutoBinding="true">
+				<Table  growing="true">
+					<columns>
+						<Column width="12em">
+						<customData>
+							<core:CustomData key="p13nData"
+								value='\{"maxLength": "5","columnIndex":"6"}' />
+						</customData>
+							<Text text="Actions" />
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem type="Navigation">
+							<cells>
+								<HBox>
+									<Button type="Transparent" text="Edit" icon="sap-icon://edit" press="ViewDataOperationsEditEntry" />
+									<Button type="Transparent" text="Delete" icon="sap-icon://delete" press="ViewDataOperationsDeleteEntry"/>
+								</HBox>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
 			</table:SmartTable>
 		</content>
 	</Dialog>
