@@ -78,7 +78,11 @@ sap.ui.define([
 				urlParameters[tableItems[i].mAggregations.cells[0].getProperty('text')]=tableItems[i].mAggregations.cells[1].getProperty('value');
 			}
 			this.callFuncImp(oModel,method,path,urlParameters).then(function(oData,response){
-				
+				var successPanel = sap.ui.getCore().byId('idFISuccessPanel');
+				successPanel.setVisible(true);
+				var data = successPanel.getBindingContext().getObject();
+				data["oSuccess"] = oError; 
+				oConfigModel.setProperty(successPanel.getBindingContext().sPath,data);
 			}).catch(function(oError){
 				var errorPanel = sap.ui.getCore().byId('idFIErrorPanel');
 				errorPanel.setVisible(true);

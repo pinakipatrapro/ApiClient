@@ -57,6 +57,19 @@
 					<Text text="{oError/response/body}" />
 				</content>
 			</Panel>
+			<Panel expanded="false" expandable="true" visible="false" id="idFISuccessPanel" class="requestErrorPanel">
+				<headerToolbar>
+					<Toolbar>
+						<Label text="{oError/message}" design="Bold"/>
+						<core:Icon src="sap-icon://error" />
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<Label text="Status Code : {oError/response/statusCode} , "/>
+					<Label text="Status Text : {oError/response/statusText}"/>
+					<Text text="{oError/response/body}" />
+				</content>
+			</Panel>
 		</content>
 		<buttons>
 			<Button text="Send request" press="callFunctionImport" />
