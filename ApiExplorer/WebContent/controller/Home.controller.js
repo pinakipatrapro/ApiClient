@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/model/json/JSONModel",
-	"sap/pinaki/controller/BaseController"
-], function(Controller,JSONModel,BaseController) {
+	"sap/pinaki/controller/BaseController",
+	"sap/pinaki/controller/ViewDataOperations"
+], function(Controller,JSONModel,BaseController,ViewDataOperations) {
 	"use strict";
 	var oData = {
 		'mainlUrl' : 'https://sapes5.sapdevcenter.com/sap/opu/odata/iwbep/GWSAMPLE_BASIC/'	
