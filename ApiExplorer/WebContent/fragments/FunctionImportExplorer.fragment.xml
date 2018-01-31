@@ -45,7 +45,7 @@
 					</ColumnListItem>
 				</items>
 			</Table>
-			<Panel expanded="false" expandable="true" visible="false" id="idFIErrorPanel" class="requestErrorPanel">
+			<Panel expanded="false" expandable="true" expandAnimation="false" visible="false" id="idFIErrorPanel" class="requestErrorPanel">
 				<headerToolbar>
 					<Toolbar>
 						<Label text="{oError/message}" design="Bold"/>
@@ -58,7 +58,7 @@
 					<Text text="{oError/response/body}" />
 				</content>
 			</Panel>
-			<Panel expanded="false" expandable="true" visible="false" id="idFISuccessPanel" class="requestSuccessPanel">
+			<Panel expanded="false" expandable="true" expandAnimation="false" visible="false" id="idFISuccessPanel" class="requestSuccessPanel">
 				<headerToolbar>
 					<Toolbar>
 						<Label text="Data Successfully Fetched" design="Bold"/>
