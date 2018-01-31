@@ -7,6 +7,10 @@ sap.ui.define([
 	var ViewDataOperations = Controller.extend("sap.pinaki.controller.ViewDataOperations", {
 
 	});
+	ViewDataOperations.closeDataDialog = function(oEvent){
+		oEvent.getSource().getParent().getParent().close();
+		oEvent.getSource().getParent().getParent().destroy();
+	};
 	ViewDataOperations.deleteEntry = function (oEvent) {
 		var source = oEvent.getSource();
 		var bindingPath = source.getBindingContext().getPath();

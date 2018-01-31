@@ -27,7 +27,7 @@
 			</Table>
 		</content>
 		<buttons>
-			<Button text="Cancel"/>
+			<Button text="Cancel" press="closeDataDialog"/>
 			<Button text="Save" />
 		</buttons>
 	</Dialog>

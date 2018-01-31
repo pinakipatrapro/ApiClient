@@ -1,6 +1,6 @@
 <core:FragmentDefinition xmlns="sap.m"
 	xmlns:core="sap.ui.core">
-	<Panel headerText="Function Imports" expandable="true" expanded="false">
+	<Panel headerText="Function Imports" expandAnimation="false" expandable="true" expanded="false">
 		<List items="{path:'idConfigModel>/metadata/functionImport'}" growing="true">
 			<headerToolbar>
 				<Toolbar>

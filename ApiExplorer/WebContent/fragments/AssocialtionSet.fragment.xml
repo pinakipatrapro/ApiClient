@@ -8,7 +8,7 @@
 				</Toolbar>
 			</headerToolbar>
 			<CustomListItem>
-				<Panel headerText="{idConfigModel>name}"  expandable="true" expanded="false">
+				<Panel headerText="{idConfigModel>name}" expandAnimation="false" expandable="true" expanded="false">
 					<headerToolbar>
 						<Toolbar>
 							<Label text="{idConfigModel>name}" design="bold"/>
