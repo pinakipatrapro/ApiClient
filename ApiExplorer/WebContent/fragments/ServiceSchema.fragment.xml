@@ -1,7 +1,7 @@
 <core:FragmentDefinition
    xmlns="sap.m"
    xmlns:core="sap.ui.core" >
-   <Panel expandable="true" expanded="false" headerText="Service Details">
+   <Panel expandable="true" expanded="true" headerText="Service Details">
    		<core:Fragment fragmentName="sap.pinaki.fragments.EntitySetPanel" type="XML"/>
 		<core:Fragment fragmentName="sap.pinaki.fragments.FuncImportPanel" type="XML"/>
 		<core:Fragment fragmentName="sap.pinaki.fragments.AssocialtionSet" type="XML"/>
