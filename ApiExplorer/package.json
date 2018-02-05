@@ -1,0 +1,11 @@
+{
+  "name": "apiexplorer",
+  "version": "1.0.1",
+  "description": "api explorer",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunttext"
+  },
+  "author": "Pinaki",
+  "license": "MIT"
+}
