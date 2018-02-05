@@ -13,7 +13,7 @@
 						<Text text="Property" />
 					</Column>
 					<Column hAlign="Center">
-						<Text text="Value" />
+						<Text text="Value" /> 
 					</Column>
 				</columns>
 				<items>
