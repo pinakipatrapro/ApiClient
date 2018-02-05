@@ -1,3 +1,6 @@
+'use strict';
+
+module.exports = function(grunt){
 var sUser = grunt.option('user');
 var sPwd = grunt.option('pwd');
  
@@ -6,10 +9,12 @@ grunt.initConfig({
     options: {
       conn: {
         server: 'https://ldcisd4.wdf.sap.corp:44302',
+        client : '001',
+        useStrictSSL : false
       },
       auth: {
-        user: sUser,
-        pwd: sPwd
+        user: 'C5262685',
+        pwd: 'Pinaki@1234'
       }
     },
     upload_build: {
@@ -20,10 +25,14 @@ grunt.initConfig({
            bspcontainer_text: 'Global API Client'
         },
         resources: {
-          cwd: 'build-folder',
+          cwd: 'WebContent',
           src: '**/*.*'
         }
       }
     }
   }
 });
+grunt.loadNpmTasks('grunt-nwabap-ui5uploader');
+grunt.registerTask('default',['grunt-nwabap-ui5uploader']);
+
+}
