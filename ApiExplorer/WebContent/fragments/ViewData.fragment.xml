@@ -44,5 +44,8 @@
 				</Table>
 			</table:SmartTable>
 		</content>
+		<buttons>
+			<Button text="Create" icon="sap-icon://add" press="ViewDataOperationsCreateEntry"/> 
+		</buttons>
 	</Dialog>
 </core:FragmentDefinition>
