@@ -6,7 +6,7 @@ sap.ui.define([
 ], function(Controller,JSONModel,BaseController,ViewDataOperations) {
 	"use strict";
 	var oData = {
-		'mainlUrl' : 'https://sapes5.sapdevcenter.com/sap/opu/odata/iwbep/GWSAMPLE_BASIC/'	
+		'mainlUrl' : 'https://ldcisd4.wdf.sap.corp:44302/sap/opu/odata/IWBEP/GWDEMO'	
 	};
 	var oConfigModel = new JSONModel(oData);
 	

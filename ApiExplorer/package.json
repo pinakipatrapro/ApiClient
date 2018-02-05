@@ -9,6 +9,9 @@
   "author": "Pinaki",
   "license": "MIT",
   "devDependencies": {
-    "grunt-nwabap-ui5uploader": "^0.2.1"
+    "grunt-nwabap-ui5uploader": "^0.2.1",
+    "grunt-ui5": "^0.2.0",
+    "gulp-ui5-preload": "^1.3.1",
+    "openui5-preload": "^2.3.1"
   }
 }
