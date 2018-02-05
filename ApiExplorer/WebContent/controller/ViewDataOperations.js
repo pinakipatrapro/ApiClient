@@ -33,10 +33,24 @@ sap.ui.define([
 		// var oModel = source.getModel();
 		
 		var data = this._ObjectPropertyToArray(source.getBindingContext().getObject());
-		var dataSet = 
+		
 		oConfigModel.setData({editContext:{
 			"properties" : data,
 			"path" : bindingPath
+		}},true);
+		this._openEditDialog(oConfigModel);
+				
+	};
+	ViewDataOperations.createEntry = function (oEvent,oConfigModel) {
+		
+		try{
+			var sampleObject = oEvent.getSource().getParent().getContent()[1].getItems()[1].getItems()[0].getBindingContext().getObject()
+			var data = this._ObjectPropertyToArray(sampleObject);
+		}catch(e){
+			alert('Please fetch the data first by pressing GO !!')
+		};
+		oConfigModel.setData({createContext:{
+			"properties" : data
 		}},true);
 		this._openEditDialog(oConfigModel);
 				
