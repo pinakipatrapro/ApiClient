@@ -1,2 +1,2 @@
 # ApiClient
-Generic Api Exploration Tool
+Generic Api Exploration Tool Based on SAP UI5
