@@ -7,7 +7,7 @@ sap.ui.define([
 	"use strict";
 	var oData = {
 		// Crenentials- HCP Credentials
-		'mainlUrl' : 'https://hcpms-p1942051505trial.hanatrial.ondemand.com/SampleServices/ESPM.svc'	
+		'mainlUrl' : 'https://ldcisd4.wdf.sap.corp:44302/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/'	
 	};
 	var oConfigModel = new JSONModel(oData);
 	

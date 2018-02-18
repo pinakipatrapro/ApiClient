@@ -6,8 +6,11 @@
 		<pages>
 			<Page title="{i18n>title}">
 				<subHeader>
-					<Toolbar>
+					<Toolbar design="Transparent">
+						<ToolbarSpacer/>
+						<Button text="Open Saved Url's" enabled="true" icon="sap-icon://navigation-down-arrow" type="Transparent"/>
 						<Input id="idServiceUrl" 
+							width="90%"
 						    value="{idConfigModel>/mainlUrl}"
 						    placeholder="{i18n>urlInputPlaceholder}" submit="onLoadUrlPress"></Input>
 						<Button text="Fetch Details" type="Accept" icon="sap-icon://process" press="onLoadUrlPress"></Button>
