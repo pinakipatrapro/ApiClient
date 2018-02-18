@@ -40,7 +40,8 @@ sap.ui.define([
             var smartFilter = sap.ui.getCore().byId('smartFilterBar');
             
             
-            smartFilter.setEntityType(bindingContext);
+			smartFilter.setEntityType(bindingContext);
+			smartFilter.rerender();
             
             smartTable.setEntitySet(bindingContext);
             smartTable.addEventDelegate({

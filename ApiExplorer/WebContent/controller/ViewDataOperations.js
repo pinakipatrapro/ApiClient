@@ -11,6 +11,10 @@ sap.ui.define([
 		oEvent.getSource().getParent().getParent().close();
 		oEvent.getSource().getParent().getParent().destroy();
 	};
+	ViewDataOperations.closeEditDialog = function(oEvent){
+		oEvent.getSource().getParent().close();
+		oEvent.getSource().getParent().destroy();
+	};
 	ViewDataOperations.deleteEntry = function (oEvent) {
 		var source = oEvent.getSource();
 		var bindingPath = source.getBindingContext().getPath();
@@ -59,7 +63,7 @@ sap.ui.define([
 		if(sap.ui.getCore().byId("displayDataEditDialog") != undefined){
 			sap.ui.getCore().byId("displayDataEditDialog").destroy();
 		};
-		var oEditDialogFragment = sap.ui.xmlfragment("sap.pinaki.fragments.EditDialog");
+		var oEditDialogFragment = sap.ui.xmlfragment("sap.pinaki.fragments.EditDialog",this);
 		oEditDialogFragment.setModel(oConfigModel);
 		sap.ui.getCore().byId('displayDataEditDialog').open();
 	};
