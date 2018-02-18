@@ -15,6 +15,22 @@ sap.ui.define([
 		oEvent.getSource().getParent().close();
 		oEvent.getSource().getParent().destroy();
 	};
+	ViewDataOperations.saveEditData = function(oEvent){
+		var oModel = oEvent.getSource().getModel();
+		var editContext = oEvent.getSource().getModel('idConfigModel').getData().editContext;
+		var path = editContext.path;
+		var aEditedData = editContext.properties;
+		var oEditedData = this._ArrayToObjectKeyProperty(aEditedData);
+		oModel.update(path, oEditedData, {
+			merge : true,
+			success: function(data) {
+			 alert("success");
+			},
+			error: function(e) {
+			 alert("error");
+			}
+		   });
+	};
 	ViewDataOperations.deleteEntry = function (oEvent) {
 		var source = oEvent.getSource();
 		var bindingPath = source.getBindingContext().getPath();
@@ -34,7 +50,7 @@ sap.ui.define([
 	ViewDataOperations.editEntry = function (oEvent,oConfigModel) {
 		var source = oEvent.getSource();
 		var bindingPath = source.getBindingContext().getPath();
-		// var oModel = source.getModel();
+		var oModel = source.getModel();
 		
 		var data = this._ObjectPropertyToArray(source.getBindingContext().getObject());
 		
@@ -42,7 +58,7 @@ sap.ui.define([
 			"properties" : data,
 			"path" : bindingPath
 		}},true);
-		this._openEditDialog(oConfigModel);
+		this._openEditDialog(oConfigModel,oModel);
 				
 	};
 	ViewDataOperations.createEntry = function (oEvent,oConfigModel) {
@@ -59,12 +75,13 @@ sap.ui.define([
 		this._openEditDialog(oConfigModel);
 				
 	};
-	ViewDataOperations._openEditDialog = function (oConfigModel){
+	ViewDataOperations._openEditDialog = function (oConfigModel,oModel){
 		if(sap.ui.getCore().byId("displayDataEditDialog") != undefined){
 			sap.ui.getCore().byId("displayDataEditDialog").destroy();
 		};
 		var oEditDialogFragment = sap.ui.xmlfragment("sap.pinaki.fragments.EditDialog",this);
-		oEditDialogFragment.setModel(oConfigModel);
+		oEditDialogFragment.setModel(oConfigModel,'idConfigModel');
+		oEditDialogFragment.setModel(oModel);
 		sap.ui.getCore().byId('displayDataEditDialog').open();
 	};
 	ViewDataOperations._ObjectPropertyToArray = function(object){
@@ -78,6 +95,14 @@ sap.ui.define([
 			aKeys.push(property);
 		});
 		return aKeys;
+	};
+	ViewDataOperations._ArrayToObjectKeyProperty = function(array){
+		//Nested data operations not supported
+		var oData = {};
+		for(var i = 0;i<array.length;i++){
+			oData[array[i].key]=array[i].value
+		}
+		return oData;
 	}
 	return ViewDataOperations;
 });

@@ -6,7 +6,7 @@
 			<Table 
 				inset="false"
 				items="{
-					path: '/editContext/properties'
+					path: 'idConfigModel>/editContext/properties'
 				}">
 				<columns>
 					<Column hAlign="Center">
@@ -19,8 +19,8 @@
 				<items>
 					<ColumnListItem>
 						<cells>
-							<Text text="{key}" />
-							<Input value="{value}"/>
+							<Text text="{idConfigModel>key}" />
+							<Input value="{idConfigModel>value}"/>
 						</cells>
 					</ColumnListItem>
 				</items>
@@ -28,7 +28,7 @@
 		</content>
 		<buttons>
 			<Button text="Cancel" press="closeEditDialog"/>
-			<Button text="Save" />
+			<Button text="Save"  press="saveEditData"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>

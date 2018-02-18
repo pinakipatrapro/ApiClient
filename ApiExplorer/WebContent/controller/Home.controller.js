@@ -17,7 +17,7 @@ sap.ui.define([
 		},
 		onLoadUrlPress : function(oEvent){
 			var url = oConfigModel.getProperty('/mainlUrl');
-			var oModel = new sap.ui.model.odata.ODataModel(url,{
+			var oModel = new sap.ui.model.odata.v2.ODataModel(url,{
 				headers : {"sap-stastics":"true"}
 			});
 			oModel.attachRequestCompleted(function(a,b,c){
