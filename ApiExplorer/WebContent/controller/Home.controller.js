@@ -17,7 +17,7 @@ sap.ui.define([
 		},
 		onLoadUrlPress : function(oEvent){
 			var url = oConfigModel.getProperty('/mainlUrl');
-			var oModel = new sap.ui.model.odata.ODataModel(url,{
+			var oModel = new sap.ui.model.odata.v2.ODataModel(url,{
 				headers : {"sap-stastics":"true"}
 			});
 			oModel.attachRequestCompleted(function(a,b,c){
@@ -27,7 +27,9 @@ sap.ui.define([
 			this.getView().setModel(oModel)
 		},
 		serviceInitialized : function(oConfigModel,oMainModel){
-			oConfigModel.setData({metadata:oMainModel.getServiceMetadata().dataServices.schema[0].entityContainer[0]},true)
+			oMainModel.attachMetadataLoaded(function(){
+				oConfigModel.setData({metadata:oMainModel.getServiceMetadata().dataServices.schema[0].entityContainer[0]},true)	
+			})
 		},
 		openDisplayDataDialog : function(oEvent){
 			if(sap.ui.getCore().byId('displayDataDialog') != undefined){
